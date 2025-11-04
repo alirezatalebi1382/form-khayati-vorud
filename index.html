@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>فرم ثبت اطلاعات مشتری</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/app.css">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+</head>
+<body>
+
+  <header>
+    <h1>فرم ثبت اطلاعات مشتری</h1>
+  </header>
+
+  <main>
+    <form action="php/submit.php" method="POST">
+      
+      <div class="row">
+        <div class="input__group">
+          <label for="firstName">نام:</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="input__group">
+          <label for="lastName">نام خانوادگی:</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="input__group">
+          <label for="phone">شماره تماس:</label>
+          <input type="text" id="phone" name="phone" required pattern="[0-9]{11}" title="شماره موبایل باید 11 رقم باشد">
+        </div>
+
+        <div class="input__group">
+          <label for="address">آدرس:</label>
+          <input type="text" id="address" name="address">
+        </div>
+      </div>
+
+      <!-- بخش اطلاعات تاریخ و فاکتور -->
+      <div class="row">
+        <div class="input__group">
+          <label for="registerDate">تاریخ ثبت:</label>
+          <input type="text" id="registerDate" name="registerDate" class="datepicker">
+        </div>
+
+        <div class="input__group">
+          <label for="deliveryDate">تاریخ تحویل:</label>
+          <input type="text" id="deliveryDate" name="deliveryDate" class="datepicker">
+        </div>
+
+        <div class="input__group">
+          <label for="factorNumber">شماره فاکتور چرتکه:</label>
+          <input type="text" id="factorNumber" name="factorNumber">
+        </div>
+
+        <div class="input__group">
+          <label for="paymentStatus">وضعیت تسویه:</label>
+          <select id="paymentStatus" name="paymentStatus">
+            <option value="settled">تسویه شده</option>
+            <option value="unpaid">بدهکار</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- دکمه و اطلاعات سایز -->
+      <button type="button" id="toggleSize" aria-expanded="false" aria-controls="sizeSection">+ اطلاعات سایز</button>
+
+      <div id="sizeSection" style="display: none;">
+        <div class="row">
+          <div class="input__group"><label>قد کامل:</label><input type="number" name="size_0" min="0"></div>
+          <div class="input__group"><label>دور سینه:</label><input type="number" name="size_1" min="0"></div>
+          <div class="input__group"><label>دور کمر:</label><input type="number" name="size_2" min="0"></div>
+          <div class="input__group"><label>دور شکم:</label><input type="number" name="size_3" min="0"></div>
+          <div class="input__group"><label>دور باسن:</label><input type="number" name="size_4" min="0"></div>
+          <div class="input__group"><label>دور بازو:</label><input type="number" name="size_5" min="0"></div>
+          <div class="input__group"><label>سرشانه تک:</label><input type="number" name="size_6" min="0"></div>
+          <div class="input__group"><label>سرشانه + قد آستین:</label><input type="number" name="size_7" min="0"></div>
+          <div class="input__group"><label>قد فاق:</label><input type="number" name="size_8" min="0"></div>
+          <div class="input__group"><label>دور ران:</label><input type="number" name="size_9" min="0"></div>
+          <div class="input__group"><label>عرض دم‌پا:</label><input type="number" name="size_10" min="0"></div>
+          <div class="input__group"><label>قد:</label><input type="number" name="size_11" min="0"></div>
+        </div>
+      </div>
+
+      <button type="submit" id="submitBtn">ثبت اطلاعات</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>طراحی شده توسط علیرضا</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-date/dist/persian-date.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
