@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         "سرشانه تک", "سرشانه + قد آستین", "قد فاق", "دور ران", "عرض دم‌پا", "قد"
     ];
 
+    
     $sizeValues = [];
     foreach ($sizes as $index => $label) {
         $sizeValues[$label] = $_POST["size"][$index] ?? '';
